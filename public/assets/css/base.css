@@ -1,0 +1,85 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --accent: #0f9b6c;
+  --accent-2: #2ecc8f;
+  --accent-dark: #0a6e4d;
+  --gold: #d4af37;
+  --bg-dark: #041a12;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: var(--bg-dark);
+  background-image: url('../images/background.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg-fixed::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(15, 155, 108, 0.38), transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(212, 175, 55, 0.14), transparent 55%),
+    rgba(3, 15, 10, 0.74);
+  z-index: 1;
+  animation: ambientPulse 8s ease-in-out infinite;
+}
+
+.bg-fixed::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+@keyframes ambientPulse {
+  0%, 100% { opacity: 0.74; }
+  50%      { opacity: 0.84; }
+}
+
+.particle {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.28;
+  z-index: -1;
+  animation: float 12s ease-in-out infinite;
+  pointer-events: none;
+}
+.p1 { width: 300px; height: 300px; top: 10%; left: 5%; background: var(--accent); }
+.p2 { width: 250px; height: 250px; bottom: 10%; right: 8%; background: var(--gold); animation-delay: -4s; }
+.p3 { width: 200px; height: 200px; top: 50%; left: 50%; background: var(--accent-2); animation-delay: -8s; }
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(30px, -40px) scale(1.15); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

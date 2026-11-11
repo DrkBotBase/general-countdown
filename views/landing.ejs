@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  
+  <meta name="title" content="<%= title %>">
+  <meta name="description" content="Cuenta Regresiva de los principales estrenos cinematograficos">
+  <meta name="author" content="DarkBox">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="<%= info.dominio %>/">
+    
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= info.dominio %>/">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="Cuenta Regresiva de los principales estrenos cinematograficos">
+  <meta property="og:image" content="<%= info.dominio %>/preview.jpg"> 
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="">
+  <meta property="og:locale" content="es_ES">
+    
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="<%= info.dominio %>/">
+  <meta name="twitter:title" content="<%= title %>">
+  <meta name="twitter:description" content="Cuenta Regresiva de los principales estrenos cinematograficos">
+  <meta name="twitter:image" content="<%= info.dominio %>/preview.jpg">
+    
+  <link rel="icon" type="image/png" href="https://mejv.pro/assets/images/icon.png">
+  <link rel="apple-touch-icon" href="https://mejv.pro/assets/images/icon.png">
+
+  <link rel="manifest" href="/manifest.json">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "<%= info.dominio %>/#webpage",
+          "url": "<%= info.dominio %>/",
+          "name": "<%= title %>",
+          "isPartOf": {
+            "@id": "<%= info.dominio %>/#website"
+          },
+          "about": {
+            "@id": "<%= info.dominio %>/#organization"
+          },
+          "primaryImageOfPage": {
+            "@id": "<%= info.dominio %>/512.png#primaryimage"
+          },
+          "image": {
+            "@id": "<%= info.dominio %>/512.png#primaryimage"
+          },
+          "description": "Cuenta Regresiva de los principales estrenos cinematograficos",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "<%= info.dominio %>/512.png#primaryimage",
+          "url": "<%= info.dominio %>/512.png",
+          "contentUrl": "<%= info.dominio %>/512.png"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "<%= info.dominio %>/#app",
+          "name": "<%= title %>",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Web, Android, iOS",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@id": "<%= info.dominio %>/#organization"
+          },
+          "screenshot": [
+            "<%= info.dominio %>/screen1.jpg",
+            "<%= info.dominio %>/screen2.jpg",
+            "<%= info.dominio %>/screen3.jpg"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "<%= info.dominio %>/#website",
+          "url": "<%= info.dominio %>/",
+          "name": "<%= title %>",
+          "publisher": {
+            "@id": "<%= info.dominio %>/#organization"
+          },
+          "inLanguage": "es"
+        },
+        {
+          "@type": "Organization",
+          "@id": "<%= info.dominio %>/#organization",
+          "name": "<%= title %>",
+          "url": "<%= info.dominio %>/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "<%= info.dominio %>/522.png",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  </script>
+  
+  <meta name="language" content="Spanish">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/navbar.css">
+  <link rel="stylesheet" href="/assets/css/hero.css">
+  <link rel="stylesheet" href="/assets/css/modal.css">
+</head>
+<body>
+  <div class="bg-fixed"></div>
+
+  <div class="particle p1"></div>
+  <div class="particle p2"></div>
+  <div class="particle p3"></div>
+
+  <div class="menu-overlay" id="overlay"></div>
+
+  <nav class="dropdown-menu" id="dropdown">
+    <a href="/"><i class="fa-solid fa-house"></i> Inicio</a>
+  <!-- 
+    <a href="#"><i class="fa-solid fa-film"></i> Películas</a>
+    <a href="#"><i class="fa-solid fa-users"></i> Personajes</a>
+    <a href="#"><i class="fa-solid fa-newspaper"></i> Noticias</a>
+  -->
+  </nav>
+
+  <header class="navbar" id="navbar">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <div class="bars">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+    <div class="nav-logo">
+      <div class="logo-text">
+        <span>Cuenta</span>
+        <span class="logo-sub">Regresiva</span>
+      </div>
+      <div class="logo-icon"><i class="fa-solid fa-clock"></i></div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="eyebrow">
+      <i class="fa-solid fa-bolt"></i> Fase 6 · Marvel Studios
+    </div>
+
+    <img
+      src="/assets/images/logo.png"
+      alt="Avengers: Doomsday"
+      class="hero-logo"
+      onerror="this.style.display='none';"
+    >
+
+    <p class="tagline">El destino de la Tierra está en juego</p>
+
+    <div class="countdown">
+      <div class="count-box">
+        <div class="count-number" id="days">00</div>
+        <div class="count-label">Días</div>
+      </div>
+      <div class="count-box">
+        <div class="count-number" id="hours">00</div>
+        <div class="count-label">Horas</div>
+      </div>
+      <div class="count-box">
+        <div class="count-number" id="minutes">00</div>
+        <div class="count-label">Minutos</div>
+      </div>
+      <div class="count-box">
+        <div class="count-number" id="seconds">00</div>
+        <div class="count-label">Segundos</div>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text" id="progressText">Calculando cuenta atrás…</div>
+    </div>
+
+    <button type="button" class="cta" id="openTrailer" data-video-id="lAr_uspgHm8">
+      Ver tráiler <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+    <div class="scroll-hint">
+      <i class="fa-solid fa-chevron-down"></i>
+      <span>Scroll</span>
+    </div>
+  </main>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Tráiler de Avengers: Doomsday">
+    <div class="video-modal-backdrop" data-close-modal></div>
+  
+    <div class="video-modal-content">
+      <button type="button" class="video-close" id="closeTrailer" aria-label="Cerrar tráiler">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+  
+      <div class="video-wrapper" id="videoWrapper"></div>
+    </div>
+  </div>
+  
+  <script src="/assets/js/countdown.js"></script>
+  <script src="/assets/js/menu.js"></script>
+  <script src="/assets/js/modal.js"></script>
+</body>
+</html>
